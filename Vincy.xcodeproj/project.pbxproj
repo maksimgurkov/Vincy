@@ -20,6 +20,15 @@
 		76956FC32A9BE31C00998252 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 76956FC52A9BE31C00998252 /* Localizable.strings */; };
 		76956FC92A9BE3E900998252 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76956FC82A9BE3E900998252 /* Router.swift */; };
 		76956FCB2A9BE43400998252 /* StartRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76956FCA2A9BE43400998252 /* StartRouter.swift */; };
+		76956FD22A9BE69E00998252 /* TabBarPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76956FD12A9BE69E00998252 /* TabBarPresenterProtocol.swift */; };
+		76956FD42A9BE6CE00998252 /* TabBarPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76956FD32A9BE6CE00998252 /* TabBarPresenter.swift */; };
+		76956FD62A9BE72100998252 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76956FD52A9BE72100998252 /* TabBarViewController.swift */; };
+		76956FD82A9BE73600998252 /* TabBarViewInputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76956FD72A9BE73600998252 /* TabBarViewInputProtocol.swift */; };
+		76956FDA2A9BE85300998252 /* TabBarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76956FD92A9BE85300998252 /* TabBarManager.swift */; };
+		76956FDC2A9BE88300998252 /* TabBarManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76956FDB2A9BE88200998252 /* TabBarManagerProtocol.swift */; };
+		76956FE12A9BEAF400998252 /* SnacksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76956FE02A9BEAF400998252 /* SnacksViewController.swift */; };
+		76956FE42A9BEB2A00998252 /* DrinksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76956FE32A9BEB2A00998252 /* DrinksViewController.swift */; };
+		76956FE62A9BECA700998252 /* TabBarAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76956FE52A9BECA700998252 /* TabBarAssembly.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +49,15 @@
 		76956FC62A9BE32100998252 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		76956FC82A9BE3E900998252 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		76956FCA2A9BE43400998252 /* StartRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartRouter.swift; sourceTree = "<group>"; };
+		76956FD12A9BE69E00998252 /* TabBarPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarPresenterProtocol.swift; sourceTree = "<group>"; };
+		76956FD32A9BE6CE00998252 /* TabBarPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarPresenter.swift; sourceTree = "<group>"; };
+		76956FD52A9BE72100998252 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		76956FD72A9BE73600998252 /* TabBarViewInputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewInputProtocol.swift; sourceTree = "<group>"; };
+		76956FD92A9BE85300998252 /* TabBarManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarManager.swift; sourceTree = "<group>"; };
+		76956FDB2A9BE88200998252 /* TabBarManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarManagerProtocol.swift; sourceTree = "<group>"; };
+		76956FE02A9BEAF400998252 /* SnacksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnacksViewController.swift; sourceTree = "<group>"; };
+		76956FE32A9BEB2A00998252 /* DrinksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinksViewController.swift; sourceTree = "<group>"; };
+		76956FE52A9BECA700998252 /* TabBarAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarAssembly.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +120,9 @@
 			isa = PBXGroup;
 			children = (
 				76956FAD2A9BDB3500998252 /* StartModules */,
+				76956FCC2A9BE62900998252 /* TabBarModules */,
+				76956FDD2A9BEA6C00998252 /* DrinksModules */,
+				76956FDE2A9BEAA600998252 /* SnacksModules */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -160,6 +181,84 @@
 				76956FCA2A9BE43400998252 /* StartRouter.swift */,
 			);
 			path = Router;
+			sourceTree = "<group>";
+		};
+		76956FCC2A9BE62900998252 /* TabBarModules */ = {
+			isa = PBXGroup;
+			children = (
+				76956FD02A9BE67800998252 /* Assembly */,
+				76956FCF2A9BE65F00998252 /* Manager */,
+				76956FCE2A9BE65100998252 /* Views */,
+				76956FCD2A9BE64700998252 /* Presenter */,
+			);
+			path = TabBarModules;
+			sourceTree = "<group>";
+		};
+		76956FCD2A9BE64700998252 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				76956FD12A9BE69E00998252 /* TabBarPresenterProtocol.swift */,
+				76956FD32A9BE6CE00998252 /* TabBarPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		76956FCE2A9BE65100998252 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				76956FD52A9BE72100998252 /* TabBarViewController.swift */,
+				76956FD72A9BE73600998252 /* TabBarViewInputProtocol.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		76956FCF2A9BE65F00998252 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				76956FD92A9BE85300998252 /* TabBarManager.swift */,
+				76956FDB2A9BE88200998252 /* TabBarManagerProtocol.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		76956FD02A9BE67800998252 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				76956FE52A9BECA700998252 /* TabBarAssembly.swift */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		76956FDD2A9BEA6C00998252 /* DrinksModules */ = {
+			isa = PBXGroup;
+			children = (
+				76956FE22A9BEB1900998252 /* Views */,
+			);
+			path = DrinksModules;
+			sourceTree = "<group>";
+		};
+		76956FDE2A9BEAA600998252 /* SnacksModules */ = {
+			isa = PBXGroup;
+			children = (
+				76956FDF2A9BEAE300998252 /* View */,
+			);
+			path = SnacksModules;
+			sourceTree = "<group>";
+		};
+		76956FDF2A9BEAE300998252 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				76956FE02A9BEAF400998252 /* SnacksViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		76956FE22A9BEB1900998252 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				76956FE32A9BEB2A00998252 /* DrinksViewController.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,14 +335,23 @@
 			files = (
 				76956FB72A9BDC6C00998252 /* StartPresenterProtocol.swift in Sources */,
 				76956F972A9BD98200998252 /* AppDelegate.swift in Sources */,
+				76956FE62A9BECA700998252 /* TabBarAssembly.swift in Sources */,
 				76956FCB2A9BE43400998252 /* StartRouter.swift in Sources */,
+				76956FE42A9BEB2A00998252 /* DrinksViewController.swift in Sources */,
+				76956FDA2A9BE85300998252 /* TabBarManager.swift in Sources */,
+				76956FE12A9BEAF400998252 /* SnacksViewController.swift in Sources */,
 				76956FB52A9BDC3100998252 /* StartViewInputProtocol.swift in Sources */,
 				76956FBD2A9BDE6400998252 /* StartButtonManagerProtocol.swift in Sources */,
+				76956FD82A9BE73600998252 /* TabBarViewInputProtocol.swift in Sources */,
 				76956FC92A9BE3E900998252 /* Router.swift in Sources */,
 				76956FB32A9BDBFB00998252 /* StartViewController.swift in Sources */,
 				76956FBF2A9BE05D00998252 /* StartAssembly.swift in Sources */,
+				76956FD42A9BE6CE00998252 /* TabBarPresenter.swift in Sources */,
 				76956FB92A9BDC9B00998252 /* StartPresenter.swift in Sources */,
+				76956FD62A9BE72100998252 /* TabBarViewController.swift in Sources */,
 				76956FBB2A9BDE2700998252 /* StartButtonManager.swift in Sources */,
+				76956FD22A9BE69E00998252 /* TabBarPresenterProtocol.swift in Sources */,
+				76956FDC2A9BE88300998252 /* TabBarManagerProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

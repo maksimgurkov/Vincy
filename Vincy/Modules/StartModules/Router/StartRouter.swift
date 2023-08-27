@@ -13,7 +13,8 @@ protocol StartRouter {
 
 extension Router: StartRouter {
     func presentTabBarController(viewController: UIViewController) {
-        
+        let tabBarVC = TabBarAssembly.assemble()
+        viewController.present(tabBarVC, animated: true)
     }
     
     

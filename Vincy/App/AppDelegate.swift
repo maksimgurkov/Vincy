@@ -22,7 +22,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             window?.makeKeyAndVisible()
             UserDefaults.standard.set(isOn, forKey: "false")
         } else {
-            
+            let tabBarModule = TabBarAssembly.assemble()
+            window = UIWindow(frame: UIScreen.main.bounds)
+            window?.rootViewController = tabBarModule
+            window?.makeKeyAndVisible()
         }
         return true
     }

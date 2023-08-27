@@ -4,6 +4,7 @@ import UIKit
 final class StartViewController: UIViewController {
     
     private let presenter: StartPresenterProtocol
+    private let router: StartRouter = Router.shared
     
     lazy var startButton: UIButton = {
         return UIButton(frame: .zero)
@@ -27,6 +28,7 @@ final class StartViewController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
+        startButton.addTarget(self, action: #selector(actionStartButton), for: .touchUpInside)
         setConstraints()
     }
     
@@ -37,6 +39,10 @@ final class StartViewController: UIViewController {
             startButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -70),
             startButton.heightAnchor.constraint(equalToConstant: 45)
         ])
+    }
+    
+    @objc private func actionStartButton() {
+        router.presentTabBarController(viewController: self)
     }
     
 }
