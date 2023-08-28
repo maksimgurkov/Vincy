@@ -29,6 +29,8 @@
 		76956FE12A9BEAF400998252 /* SnacksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76956FE02A9BEAF400998252 /* SnacksViewController.swift */; };
 		76956FE42A9BEB2A00998252 /* DrinksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76956FE32A9BEB2A00998252 /* DrinksViewController.swift */; };
 		76956FE62A9BECA700998252 /* TabBarAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76956FE52A9BECA700998252 /* TabBarAssembly.swift */; };
+		76956FEA2A9C7EB600998252 /* CuponViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76956FE92A9C7EB600998252 /* CuponViewController.swift */; };
+		76956FEE2A9C7F4C00998252 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76956FED2A9C7F4C00998252 /* SettingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +60,8 @@
 		76956FE02A9BEAF400998252 /* SnacksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnacksViewController.swift; sourceTree = "<group>"; };
 		76956FE32A9BEB2A00998252 /* DrinksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinksViewController.swift; sourceTree = "<group>"; };
 		76956FE52A9BECA700998252 /* TabBarAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarAssembly.swift; sourceTree = "<group>"; };
+		76956FE92A9C7EB600998252 /* CuponViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CuponViewController.swift; sourceTree = "<group>"; };
+		76956FED2A9C7F4C00998252 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +123,8 @@
 		76956FAC2A9BDB2300998252 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				76956FEB2A9C7F3000998252 /* SettingModules */,
+				76956FE72A9C7E6200998252 /* CouponModules */,
 				76956FAD2A9BDB3500998252 /* StartModules */,
 				76956FCC2A9BE62900998252 /* TabBarModules */,
 				76956FDD2A9BEA6C00998252 /* DrinksModules */,
@@ -261,6 +267,38 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		76956FE72A9C7E6200998252 /* CouponModules */ = {
+			isa = PBXGroup;
+			children = (
+				76956FE82A9C7E9D00998252 /* Views */,
+			);
+			path = CouponModules;
+			sourceTree = "<group>";
+		};
+		76956FE82A9C7E9D00998252 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				76956FE92A9C7EB600998252 /* CuponViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		76956FEB2A9C7F3000998252 /* SettingModules */ = {
+			isa = PBXGroup;
+			children = (
+				76956FEC2A9C7F3D00998252 /* Views */,
+			);
+			path = SettingModules;
+			sourceTree = "<group>";
+		};
+		76956FEC2A9C7F3D00998252 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				76956FED2A9C7F4C00998252 /* SettingViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -338,6 +376,7 @@
 				76956FE62A9BECA700998252 /* TabBarAssembly.swift in Sources */,
 				76956FCB2A9BE43400998252 /* StartRouter.swift in Sources */,
 				76956FE42A9BEB2A00998252 /* DrinksViewController.swift in Sources */,
+				76956FEE2A9C7F4C00998252 /* SettingViewController.swift in Sources */,
 				76956FDA2A9BE85300998252 /* TabBarManager.swift in Sources */,
 				76956FE12A9BEAF400998252 /* SnacksViewController.swift in Sources */,
 				76956FB52A9BDC3100998252 /* StartViewInputProtocol.swift in Sources */,
@@ -345,6 +384,7 @@
 				76956FD82A9BE73600998252 /* TabBarViewInputProtocol.swift in Sources */,
 				76956FC92A9BE3E900998252 /* Router.swift in Sources */,
 				76956FB32A9BDBFB00998252 /* StartViewController.swift in Sources */,
+				76956FEA2A9C7EB600998252 /* CuponViewController.swift in Sources */,
 				76956FBF2A9BE05D00998252 /* StartAssembly.swift in Sources */,
 				76956FD42A9BE6CE00998252 /* TabBarPresenter.swift in Sources */,
 				76956FB92A9BDC9B00998252 /* StartPresenter.swift in Sources */,

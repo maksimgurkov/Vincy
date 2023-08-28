@@ -44,7 +44,9 @@ final class TabBarViewController: UITabBarController {
     private func generatorTabBar() {
         viewControllers = [
         generator(viewController: DrinksViewController(), title: NSLocalizedString("tabBarDrinksTitle", comment: ""), image: "cup.and.saucer"),
-        generator(viewController: SnacksViewController(), title: NSLocalizedString("tabBarSnacksTitle", comment: ""), image: "popcorn")
+        generator(viewController: SnacksViewController(), title: NSLocalizedString("tabBarSnacksTitle", comment: ""), image: "popcorn"),
+        generator(viewController: CuponViewController(), title: NSLocalizedString("tabBarCuponTitle", comment: ""), image: "percent"),
+        generator(viewController: SettingViewController(), title: NSLocalizedString("tabBarSettingsTitle", comment: ""), image: "gearshape")
         ]
     }
     
