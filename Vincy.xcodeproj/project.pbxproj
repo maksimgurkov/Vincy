@@ -31,6 +31,13 @@
 		76956FE62A9BECA700998252 /* TabBarAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76956FE52A9BECA700998252 /* TabBarAssembly.swift */; };
 		76956FEA2A9C7EB600998252 /* CuponViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76956FE92A9C7EB600998252 /* CuponViewController.swift */; };
 		76956FEE2A9C7F4C00998252 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76956FED2A9C7F4C00998252 /* SettingViewController.swift */; };
+		76956FF32A9C813500998252 /* DrinksPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76956FF22A9C813500998252 /* DrinksPresenterProtocol.swift */; };
+		76956FF52A9C816700998252 /* DrinksPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76956FF42A9C816700998252 /* DrinksPresenter.swift */; };
+		76956FF72A9C82A600998252 /* DrinksViewInputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76956FF62A9C82A600998252 /* DrinksViewInputProtocol.swift */; };
+		76956FF92A9C832A00998252 /* DrinksCollectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76956FF82A9C832A00998252 /* DrinksCollectionManager.swift */; };
+		76956FFB2A9C841F00998252 /* DrinksCollectionManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76956FFA2A9C841F00998252 /* DrinksCollectionManagerProtocol.swift */; };
+		76956FFE2A9C856500998252 /* DrinksCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76956FFD2A9C856500998252 /* DrinksCollectionCell.swift */; };
+		769570002A9C8EC000998252 /* DrinksAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76956FFF2A9C8EC000998252 /* DrinksAssembly.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +69,13 @@
 		76956FE52A9BECA700998252 /* TabBarAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarAssembly.swift; sourceTree = "<group>"; };
 		76956FE92A9C7EB600998252 /* CuponViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CuponViewController.swift; sourceTree = "<group>"; };
 		76956FED2A9C7F4C00998252 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		76956FF22A9C813500998252 /* DrinksPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinksPresenterProtocol.swift; sourceTree = "<group>"; };
+		76956FF42A9C816700998252 /* DrinksPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinksPresenter.swift; sourceTree = "<group>"; };
+		76956FF62A9C82A600998252 /* DrinksViewInputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinksViewInputProtocol.swift; sourceTree = "<group>"; };
+		76956FF82A9C832A00998252 /* DrinksCollectionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinksCollectionManager.swift; sourceTree = "<group>"; };
+		76956FFA2A9C841F00998252 /* DrinksCollectionManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinksCollectionManagerProtocol.swift; sourceTree = "<group>"; };
+		76956FFD2A9C856500998252 /* DrinksCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinksCollectionCell.swift; sourceTree = "<group>"; };
+		76956FFF2A9C8EC000998252 /* DrinksAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinksAssembly.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,12 +137,12 @@
 		76956FAC2A9BDB2300998252 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				76956FEB2A9C7F3000998252 /* SettingModules */,
-				76956FE72A9C7E6200998252 /* CouponModules */,
 				76956FAD2A9BDB3500998252 /* StartModules */,
 				76956FCC2A9BE62900998252 /* TabBarModules */,
 				76956FDD2A9BEA6C00998252 /* DrinksModules */,
 				76956FDE2A9BEAA600998252 /* SnacksModules */,
+				76956FE72A9C7E6200998252 /* CouponModules */,
+				76956FEB2A9C7F3000998252 /* SettingModules */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -238,7 +252,10 @@
 		76956FDD2A9BEA6C00998252 /* DrinksModules */ = {
 			isa = PBXGroup;
 			children = (
+				76956FF12A9C80BB00998252 /* Assembly */,
+				76956FF02A9C80B200998252 /* Manager */,
 				76956FE22A9BEB1900998252 /* Views */,
+				76956FEF2A9C809600998252 /* Presenter */,
 			);
 			path = DrinksModules;
 			sourceTree = "<group>";
@@ -262,7 +279,9 @@
 		76956FE22A9BEB1900998252 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				76956FFC2A9C852F00998252 /* Cells */,
 				76956FE32A9BEB2A00998252 /* DrinksViewController.swift */,
+				76956FF62A9C82A600998252 /* DrinksViewInputProtocol.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -297,6 +316,40 @@
 				76956FED2A9C7F4C00998252 /* SettingViewController.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		76956FEF2A9C809600998252 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				76956FF22A9C813500998252 /* DrinksPresenterProtocol.swift */,
+				76956FF42A9C816700998252 /* DrinksPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		76956FF02A9C80B200998252 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				76956FF82A9C832A00998252 /* DrinksCollectionManager.swift */,
+				76956FFA2A9C841F00998252 /* DrinksCollectionManagerProtocol.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		76956FF12A9C80BB00998252 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				76956FFF2A9C8EC000998252 /* DrinksAssembly.swift */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		76956FFC2A9C852F00998252 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				76956FFD2A9C856500998252 /* DrinksCollectionCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -377,20 +430,27 @@
 				76956FCB2A9BE43400998252 /* StartRouter.swift in Sources */,
 				76956FE42A9BEB2A00998252 /* DrinksViewController.swift in Sources */,
 				76956FEE2A9C7F4C00998252 /* SettingViewController.swift in Sources */,
+				76956FFB2A9C841F00998252 /* DrinksCollectionManagerProtocol.swift in Sources */,
 				76956FDA2A9BE85300998252 /* TabBarManager.swift in Sources */,
 				76956FE12A9BEAF400998252 /* SnacksViewController.swift in Sources */,
+				76956FF72A9C82A600998252 /* DrinksViewInputProtocol.swift in Sources */,
 				76956FB52A9BDC3100998252 /* StartViewInputProtocol.swift in Sources */,
+				76956FF32A9C813500998252 /* DrinksPresenterProtocol.swift in Sources */,
 				76956FBD2A9BDE6400998252 /* StartButtonManagerProtocol.swift in Sources */,
 				76956FD82A9BE73600998252 /* TabBarViewInputProtocol.swift in Sources */,
 				76956FC92A9BE3E900998252 /* Router.swift in Sources */,
 				76956FB32A9BDBFB00998252 /* StartViewController.swift in Sources */,
 				76956FEA2A9C7EB600998252 /* CuponViewController.swift in Sources */,
 				76956FBF2A9BE05D00998252 /* StartAssembly.swift in Sources */,
+				76956FF92A9C832A00998252 /* DrinksCollectionManager.swift in Sources */,
 				76956FD42A9BE6CE00998252 /* TabBarPresenter.swift in Sources */,
+				76956FFE2A9C856500998252 /* DrinksCollectionCell.swift in Sources */,
 				76956FB92A9BDC9B00998252 /* StartPresenter.swift in Sources */,
 				76956FD62A9BE72100998252 /* TabBarViewController.swift in Sources */,
+				76956FF52A9C816700998252 /* DrinksPresenter.swift in Sources */,
 				76956FBB2A9BDE2700998252 /* StartButtonManager.swift in Sources */,
 				76956FD22A9BE69E00998252 /* TabBarPresenterProtocol.swift in Sources */,
+				769570002A9C8EC000998252 /* DrinksAssembly.swift in Sources */,
 				76956FDC2A9BE88300998252 /* TabBarManagerProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

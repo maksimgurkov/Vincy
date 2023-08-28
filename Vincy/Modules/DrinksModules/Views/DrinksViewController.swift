@@ -1,31 +1,54 @@
 //
-//  DrinksViewController.swift
-//  Vincy
-//
-//  Created by Максим Гурков on 27.08.2023.
-//
 
 import UIKit
 
-class DrinksViewController: UIViewController {
-
+final class DrinksViewController: UIViewController {
+    
+    private let presenter: DrinksPresenterProtocol
+    
+    private let collectionLayout = UICollectionViewFlowLayout()
+    
+    lazy var collectionView: UICollectionView = {
+        return UICollectionView(frame: .zero, collectionViewLayout: collectionLayout)
+    }()
+    
+    init(presenter: DrinksPresenterProtocol) {
+        self.presenter = presenter
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         title = NSLocalizedString("tabBarDrinksTitle", comment: "")
         tabBarController?.tabBar.tintColor = .brown
-        // Do any additional setup after loading the view.
+        view.addSubview(collectionView)
+        presenter.viewDidLoad()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        collectionLayout.minimumLineSpacing = 8
+        collectionLayout.scrollDirection = .vertical
+        collectionView.frame = view.frame(forAlignmentRect: CGRect(x: 0, y: 0, width: view.frame.width - 1, height: view.frame.height))
+        collectionView.reloadData()
     }
-    */
+    
+    private func setConstraints() {
+        NSLayoutConstraint.activate([
+            collectionView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20),
+            collectionView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0),
+            collectionView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20),
+            collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0)
+            
+        ])
+    }
+}
 
+extension DrinksViewController: DrinksViewInputProtocol {
+    
 }
