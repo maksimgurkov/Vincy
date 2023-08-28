@@ -13,7 +13,9 @@ protocol StartRouter {
 
 extension Router: StartRouter {
     func presentTabBarController(viewController: UIViewController) {
-        
+        let tabBarVC = TabBarAssembly.assemble()
+        tabBarVC.modalPresentationStyle = .fullScreen
+        viewController.present(tabBarVC, animated: true)
     }
     
     

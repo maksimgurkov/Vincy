@@ -6,3 +6,7 @@
   
 */
 "startViewButton" = "Start";
+"tabBarDrinksTitle" = "Drinks";
+"tabBarSnacksTitle" = "Snacks";
+"tabBarCuponTitle" = "Cupon";
+"tabBarSettingsTitle" = "Settings";
