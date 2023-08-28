@@ -36,7 +36,7 @@ extension DrinksCollectionManager: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DrinksCollectionCell.id, for: indexPath) as? DrinksCollectionCell else { return UICollectionViewCell() }
-        cell.fill(text: "jnjjnjjd")
+        cell.fill(text: "Капучино 250 мл.")
         return cell
     }
     
@@ -49,7 +49,7 @@ extension DrinksCollectionManager: UICollectionViewDelegate {
 
 extension DrinksCollectionManager: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        CGSize(width: collectionView.frame.width / 3.2,
-               height: 200)
+        CGSize(width: collectionView.frame.width / 2.1,
+               height: 250)
     }
 }
