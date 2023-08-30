@@ -15,7 +15,7 @@ final class DrinksCollectionCell: UICollectionViewCell {
         let image = UIImageView()
         image.image = UIImage(named: "Капучино")
         image.layer.masksToBounds = true
-        image.contentMode = .scaleToFill
+        image.contentMode = .scaleAspectFill
         image.layer.cornerRadius = 10
         image.translatesAutoresizingMaskIntoConstraints = false
         return image
@@ -25,24 +25,35 @@ final class DrinksCollectionCell: UICollectionViewCell {
         let label = UILabel()
         label.tintColor = .white
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = .bodyRegular
         return label
     }()
     
-    private let liteImage: UIImageView = {
-        let image = UIImageView()
-        image.image = UIImage(named: "250")
-        image.layer.masksToBounds = true
-        image.contentMode = .scaleToFill
-        image.layer.cornerRadius = 10
-        image.translatesAutoresizingMaskIntoConstraints = false
-        return image
+    private let volumeLabel: UILabel = {
+        let label = UILabel()
+        label.tintColor = .white
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = " от 250 мл."
+        label.font = .caption2
+        return label
     }()
+    
+//    private let liteImage: UIImageView = {
+//        let image = UIImageView()
+//        image.image = UIImage(named: "250")
+//        image.layer.masksToBounds = true
+//        image.contentMode = .scaleToFill
+//        image.layer.cornerRadius = 10
+//        image.translatesAutoresizingMaskIntoConstraints = false
+//        return image
+//    }()
         
     private let liteLabel: UILabel = {
         let label = UILabel()
         label.tintColor = .white
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "195 р."
+        label.font = .caption2
         return label
     }()
         
@@ -63,7 +74,7 @@ final class DrinksCollectionCell: UICollectionViewCell {
         layer.borderWidth = 2
         addSubview(drinkImage)
         addSubview(titleLabel)
-        addSubview(liteImage)
+        addSubview(volumeLabel)
         addSubview(liteLabel)
     }
     
@@ -77,19 +88,22 @@ final class DrinksCollectionCell: UICollectionViewCell {
             drinkImage.leftAnchor.constraint(equalTo: leftAnchor, constant: 10),
             drinkImage.topAnchor.constraint(equalTo: topAnchor, constant: 10),
             drinkImage.rightAnchor.constraint(equalTo: rightAnchor, constant: -10),
-            drinkImage.heightAnchor.constraint(equalToConstant: frame.height / 2),
+            drinkImage.heightAnchor.constraint(equalToConstant: frame.height / 1.5),
             
-            titleLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: 10),
-            titleLabel.rightAnchor.constraint(equalTo: rightAnchor, constant: -10),
+            titleLabel.leftAnchor.constraint(equalTo: drinkImage.leftAnchor),
+            titleLabel.rightAnchor.constraint(equalTo: drinkImage.rightAnchor),
             titleLabel.topAnchor.constraint(equalTo: drinkImage.bottomAnchor, constant: 10),
             
-            liteImage.leftAnchor.constraint(equalTo: leftAnchor, constant: 30),
-            liteImage.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 20),
-            liteImage.heightAnchor.constraint(equalToConstant: 30),
-            liteImage.widthAnchor.constraint(equalToConstant: 30),
+//            liteImage.leftAnchor.constraint(equalTo: leftAnchor, constant: 30),
+//            liteImage.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 20),
+//            liteImage.heightAnchor.constraint(equalToConstant: 30),
+//            liteImage.widthAnchor.constraint(equalToConstant: 30),
             
-            liteLabel.leftAnchor.constraint(equalTo: liteImage.rightAnchor, constant: 10),
-            liteLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 25)
+            liteLabel.rightAnchor.constraint(equalTo: drinkImage.rightAnchor),
+            liteLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 3),
+            
+            volumeLabel.leftAnchor.constraint(equalTo: titleLabel.leftAnchor),
+            volumeLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 3)
             
         ])
     }

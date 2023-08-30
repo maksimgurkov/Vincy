@@ -10,6 +10,12 @@ import UIKit
 final class DrinksCollectionManager: NSObject {
     
     weak var collectionView: UICollectionView?
+    private let collectionParameters = CollectionLayoutParameters(
+        cellCount: 2,
+        leftInset: 20,
+        rightInset: 20,
+        cellSpacing: 7
+    )
 }
 
 extension DrinksCollectionManager: DrinksCollectionManagerProtocol {
@@ -36,7 +42,7 @@ extension DrinksCollectionManager: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DrinksCollectionCell.id, for: indexPath) as? DrinksCollectionCell else { return UICollectionViewCell() }
-        cell.fill(text: "Капучино 250 мл.")
+        cell.fill(text: "Капучино")
         return cell
     }
     
@@ -50,6 +56,9 @@ extension DrinksCollectionManager: UICollectionViewDelegate {
 extension DrinksCollectionManager: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         CGSize(width: collectionView.frame.width / 2.1,
-               height: 250)
+               height: 200)
+//        let availableWidth = collectionView.frame.size.width - collectionParameters.paddingWidth
+//        let cellWidth = availableWidth / CGFloat(collectionParameters.cellCount)
+//        return CGSize(width: cellWidth, height: 100)
     }
 }

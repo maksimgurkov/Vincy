@@ -38,6 +38,8 @@
 		76956FFB2A9C841F00998252 /* DrinksCollectionManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76956FFA2A9C841F00998252 /* DrinksCollectionManagerProtocol.swift */; };
 		76956FFE2A9C856500998252 /* DrinksCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76956FFD2A9C856500998252 /* DrinksCollectionCell.swift */; };
 		769570002A9C8EC000998252 /* DrinksAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76956FFF2A9C8EC000998252 /* DrinksAssembly.swift */; };
+		BA891BD82A9FD2BB00040DCE /* CollectionLayoutParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA891BD72A9FD2BB00040DCE /* CollectionLayoutParameters.swift */; };
+		BA891BDA2A9FDCDB00040DCE /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA891BD92A9FDCDB00040DCE /* Fonts.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +78,8 @@
 		76956FFA2A9C841F00998252 /* DrinksCollectionManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinksCollectionManagerProtocol.swift; sourceTree = "<group>"; };
 		76956FFD2A9C856500998252 /* DrinksCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinksCollectionCell.swift; sourceTree = "<group>"; };
 		76956FFF2A9C8EC000998252 /* DrinksAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinksAssembly.swift; sourceTree = "<group>"; };
+		BA891BD72A9FD2BB00040DCE /* CollectionLayoutParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionLayoutParameters.swift; sourceTree = "<group>"; };
+		BA891BD92A9FDCDB00040DCE /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +112,7 @@
 		76956F952A9BD98200998252 /* Vincy */ = {
 			isa = PBXGroup;
 			children = (
+				BA891BD62A9FD29800040DCE /* Helpers */,
 				76956FAA2A9BD9C200998252 /* App */,
 				76956FAC2A9BDB2300998252 /* Modules */,
 				76956FAB2A9BDA1B00998252 /* Suport */,
@@ -352,6 +357,15 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		BA891BD62A9FD29800040DCE /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				BA891BD72A9FD2BB00040DCE /* CollectionLayoutParameters.swift */,
+				BA891BD92A9FDCDB00040DCE /* Fonts.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -430,6 +444,7 @@
 				76956FCB2A9BE43400998252 /* StartRouter.swift in Sources */,
 				76956FE42A9BEB2A00998252 /* DrinksViewController.swift in Sources */,
 				76956FEE2A9C7F4C00998252 /* SettingViewController.swift in Sources */,
+				BA891BD82A9FD2BB00040DCE /* CollectionLayoutParameters.swift in Sources */,
 				76956FFB2A9C841F00998252 /* DrinksCollectionManagerProtocol.swift in Sources */,
 				76956FDA2A9BE85300998252 /* TabBarManager.swift in Sources */,
 				76956FE12A9BEAF400998252 /* SnacksViewController.swift in Sources */,
@@ -439,6 +454,7 @@
 				76956FBD2A9BDE6400998252 /* StartButtonManagerProtocol.swift in Sources */,
 				76956FD82A9BE73600998252 /* TabBarViewInputProtocol.swift in Sources */,
 				76956FC92A9BE3E900998252 /* Router.swift in Sources */,
+				BA891BDA2A9FDCDB00040DCE /* Fonts.swift in Sources */,
 				76956FB32A9BDBFB00998252 /* StartViewController.swift in Sources */,
 				76956FEA2A9C7EB600998252 /* CuponViewController.swift in Sources */,
 				76956FBF2A9BE05D00998252 /* StartAssembly.swift in Sources */,
