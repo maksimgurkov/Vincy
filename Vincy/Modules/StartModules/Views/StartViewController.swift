@@ -47,6 +47,7 @@ final class StartViewController: UIViewController {
     
 }
 
+// MARK: - StartViewInputProtocol
 extension StartViewController: StartViewInputProtocol {
     
 }
