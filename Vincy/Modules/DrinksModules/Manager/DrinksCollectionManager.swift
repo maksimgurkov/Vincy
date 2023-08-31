@@ -10,15 +10,23 @@ import UIKit
 final class DrinksCollectionManager: NSObject {
     
     weak var collectionView: UICollectionView?
-    private let collectionParameters = CollectionLayoutParameters(
-        cellCount: 2,
-        leftInset: 20,
-        rightInset: 20,
-        cellSpacing: 7
-    )
+    
+    private var viewModels = [ProductViewModel]()
+//    private let collectionParameters = CollectionLayoutParameters(
+//        cellCount: 3,
+//        leftInset: 20,
+//        rightInset: 20,
+//        cellSpacing: 7
+//    )
 }
 
 extension DrinksCollectionManager: DrinksCollectionManagerProtocol {
+    
+    func updateCollection(viewModels: [ProductViewModel]) {
+        self.viewModels = viewModels
+        collectionView?.reloadData()
+    }
+    
     func setupCollection(collectionView: UICollectionView) {
         self.collectionView = collectionView
         self.collectionView?.register(DrinksCollectionCell.self, forCellWithReuseIdentifier: DrinksCollectionCell.id)
@@ -37,12 +45,13 @@ extension DrinksCollectionManager: DrinksCollectionManagerProtocol {
 
 extension DrinksCollectionManager: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        10
+        viewModels.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DrinksCollectionCell.id, for: indexPath) as? DrinksCollectionCell else { return UICollectionViewCell() }
-        cell.fill(text: "Капучино")
+        let viewModel = viewModels[indexPath.item]
+        cell.fill(viewModel: viewModel)
         return cell
     }
     
@@ -55,10 +64,12 @@ extension DrinksCollectionManager: UICollectionViewDelegate {
 
 extension DrinksCollectionManager: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        CGSize(width: collectionView.frame.width / 2.1,
-               height: 200)
-//        let availableWidth = collectionView.frame.size.width - collectionParameters.paddingWidth
-//        let cellWidth = availableWidth / CGFloat(collectionParameters.cellCount)
-//        return CGSize(width: cellWidth, height: 100)
+        CGSize(width: collectionView.frame.width / 2.3,
+               height: 220)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 15)
     }
 }
+

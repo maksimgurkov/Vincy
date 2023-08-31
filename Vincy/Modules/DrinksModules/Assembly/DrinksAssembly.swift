@@ -5,8 +5,9 @@ final class DrinksAssembly {
     
     static func assemble() -> UIViewController {
         
+        let networkService = NetworkService()
         let collectionManager = DrinksCollectionManager()
-        let presenter = DrinksPresenter(collectionViewManager: collectionManager)
+        let presenter = DrinksPresenter(networkService: networkService, collectionViewManager: collectionManager)
         let view = DrinksViewController(presenter: presenter)
         
         presenter.view = view

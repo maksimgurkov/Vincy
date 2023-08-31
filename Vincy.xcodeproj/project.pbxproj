@@ -38,6 +38,10 @@
 		76956FFB2A9C841F00998252 /* DrinksCollectionManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76956FFA2A9C841F00998252 /* DrinksCollectionManagerProtocol.swift */; };
 		76956FFE2A9C856500998252 /* DrinksCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76956FFD2A9C856500998252 /* DrinksCollectionCell.swift */; };
 		769570002A9C8EC000998252 /* DrinksAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76956FFF2A9C8EC000998252 /* DrinksAssembly.swift */; };
+		76A631FA2AA06085007D1CC5 /* ProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A631F92AA06085007D1CC5 /* ProductModel.swift */; };
+		76A631FD2AA0623C007D1CC5 /* ProductCellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A631FC2AA0623C007D1CC5 /* ProductCellType.swift */; };
+		76A632002AA0639B007D1CC5 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A631FF2AA0639B007D1CC5 /* NetworkManager.swift */; };
+		76A632022AA06448007D1CC5 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A632012AA06448007D1CC5 /* DataManager.swift */; };
 		BA891BD82A9FD2BB00040DCE /* CollectionLayoutParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA891BD72A9FD2BB00040DCE /* CollectionLayoutParameters.swift */; };
 		BA891BDA2A9FDCDB00040DCE /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA891BD92A9FDCDB00040DCE /* Fonts.swift */; };
 /* End PBXBuildFile section */
@@ -78,6 +82,10 @@
 		76956FFA2A9C841F00998252 /* DrinksCollectionManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinksCollectionManagerProtocol.swift; sourceTree = "<group>"; };
 		76956FFD2A9C856500998252 /* DrinksCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinksCollectionCell.swift; sourceTree = "<group>"; };
 		76956FFF2A9C8EC000998252 /* DrinksAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinksAssembly.swift; sourceTree = "<group>"; };
+		76A631F92AA06085007D1CC5 /* ProductModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductModel.swift; sourceTree = "<group>"; };
+		76A631FC2AA0623C007D1CC5 /* ProductCellType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCellType.swift; sourceTree = "<group>"; };
+		76A631FF2AA0639B007D1CC5 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		76A632012AA06448007D1CC5 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		BA891BD72A9FD2BB00040DCE /* CollectionLayoutParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionLayoutParameters.swift; sourceTree = "<group>"; };
 		BA891BD92A9FDCDB00040DCE /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -113,10 +121,12 @@
 			isa = PBXGroup;
 			children = (
 				BA891BD62A9FD29800040DCE /* Helpers */,
+				76A631FE2AA062E7007D1CC5 /* Services */,
 				76956FAA2A9BD9C200998252 /* App */,
 				76956FAC2A9BDB2300998252 /* Modules */,
 				76956FAB2A9BDA1B00998252 /* Suport */,
 				76956FC52A9BE31C00998252 /* Localizable.strings */,
+				76A632012AA06448007D1CC5 /* DataManager.swift */,
 			);
 			path = Vincy;
 			sourceTree = "<group>";
@@ -257,6 +267,7 @@
 		76956FDD2A9BEA6C00998252 /* DrinksModules */ = {
 			isa = PBXGroup;
 			children = (
+				76A631F82AA06062007D1CC5 /* Model */,
 				76956FF12A9C80BB00998252 /* Assembly */,
 				76956FF02A9C80B200998252 /* Manager */,
 				76956FE22A9BEB1900998252 /* Views */,
@@ -284,6 +295,7 @@
 		76956FE22A9BEB1900998252 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				76A631FB2AA06210007D1CC5 /* ViewModels */,
 				76956FFC2A9C852F00998252 /* Cells */,
 				76956FE32A9BEB2A00998252 /* DrinksViewController.swift */,
 				76956FF62A9C82A600998252 /* DrinksViewInputProtocol.swift */,
@@ -355,6 +367,30 @@
 				76956FFD2A9C856500998252 /* DrinksCollectionCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		76A631F82AA06062007D1CC5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				76A631F92AA06085007D1CC5 /* ProductModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		76A631FB2AA06210007D1CC5 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				76A631FC2AA0623C007D1CC5 /* ProductCellType.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		76A631FE2AA062E7007D1CC5 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				76A631FF2AA0639B007D1CC5 /* NetworkManager.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		BA891BD62A9FD29800040DCE /* Helpers */ = {
@@ -447,15 +483,19 @@
 				BA891BD82A9FD2BB00040DCE /* CollectionLayoutParameters.swift in Sources */,
 				76956FFB2A9C841F00998252 /* DrinksCollectionManagerProtocol.swift in Sources */,
 				76956FDA2A9BE85300998252 /* TabBarManager.swift in Sources */,
+				76A632022AA06448007D1CC5 /* DataManager.swift in Sources */,
 				76956FE12A9BEAF400998252 /* SnacksViewController.swift in Sources */,
 				76956FF72A9C82A600998252 /* DrinksViewInputProtocol.swift in Sources */,
 				76956FB52A9BDC3100998252 /* StartViewInputProtocol.swift in Sources */,
 				76956FF32A9C813500998252 /* DrinksPresenterProtocol.swift in Sources */,
 				76956FBD2A9BDE6400998252 /* StartButtonManagerProtocol.swift in Sources */,
 				76956FD82A9BE73600998252 /* TabBarViewInputProtocol.swift in Sources */,
+				76A632002AA0639B007D1CC5 /* NetworkManager.swift in Sources */,
 				76956FC92A9BE3E900998252 /* Router.swift in Sources */,
 				BA891BDA2A9FDCDB00040DCE /* Fonts.swift in Sources */,
 				76956FB32A9BDBFB00998252 /* StartViewController.swift in Sources */,
+				76A631FA2AA06085007D1CC5 /* ProductModel.swift in Sources */,
+				76A631FD2AA0623C007D1CC5 /* ProductCellType.swift in Sources */,
 				76956FEA2A9C7EB600998252 /* CuponViewController.swift in Sources */,
 				76956FBF2A9BE05D00998252 /* StartAssembly.swift in Sources */,
 				76956FF92A9C832A00998252 /* DrinksCollectionManager.swift in Sources */,
