@@ -11,5 +11,5 @@ struct ProductViewModel {
     let title: String
     let image: String
     let price: String
-    let didTape: (String) -> Void
+    let didTape: (ProductViewModel) -> Void
 }

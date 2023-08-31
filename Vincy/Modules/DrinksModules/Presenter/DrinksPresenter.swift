@@ -11,12 +11,14 @@ final class DrinksPresenter {
     
     weak var view: DrinksViewInputProtocol?
     
+    private let router: DrinksRouterProtocol
     private let networkService: NetworkServiceProtocol
     private let collectionViewManager: DrinksCollectionManagerProtocol
     
-    init(networkService: NetworkServiceProtocol, collectionViewManager: DrinksCollectionManagerProtocol) {
+    init(router: DrinksRouterProtocol, networkService: NetworkServiceProtocol, collectionViewManager: DrinksCollectionManagerProtocol) {
         self.collectionViewManager = collectionViewManager
         self.networkService = networkService
+        self.router = router
     }
     
 }
@@ -37,8 +39,8 @@ private extension DrinksPresenter {
         var viewModels = [ProductViewModel]()
         
         models.forEach({
-            let viewModel = ProductViewModel(title: $0.nameProduct, image: $0.imageProduct, price: $0.priceProduct) { string in
-                print(string)
+            let viewModel = ProductViewModel(title: $0.nameProduct, image: $0.imageProduct, price: $0.priceProduct) { [weak self] model in
+                self?.router.routerDetail(viewModel: model)
             }
             viewModels.append(viewModel)
         })

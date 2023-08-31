@@ -1,9 +1,3 @@
-//
-//  DrinksCollectionManager.swift
-//  Vincy
-//
-//  Created by Максим Гурков on 28.08.2023.
-//
 
 import UIKit
 
@@ -12,12 +6,6 @@ final class DrinksCollectionManager: NSObject {
     weak var collectionView: UICollectionView?
     
     private var viewModels = [ProductViewModel]()
-//    private let collectionParameters = CollectionLayoutParameters(
-//        cellCount: 3,
-//        leftInset: 20,
-//        rightInset: 20,
-//        cellSpacing: 7
-//    )
 }
 
 extension DrinksCollectionManager: DrinksCollectionManagerProtocol {
@@ -59,6 +47,13 @@ extension DrinksCollectionManager: UICollectionViewDataSource {
 }
 
 extension DrinksCollectionManager: UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        let viewModel = viewModels[indexPath.item]
+
+        viewModel.didTape(viewModel)
+        print(indexPath.item)
+    }
     
 }
 
