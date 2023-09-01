@@ -38,7 +38,7 @@ extension DrinksCollectionManager: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DrinksCollectionCell.id, for: indexPath) as? DrinksCollectionCell else { return UICollectionViewCell() }
-        let viewModel = viewModels[indexPath.item]
+        let viewModel = viewModels[indexPath.row]
         cell.fill(viewModel: viewModel)
         return cell
     }
@@ -49,10 +49,10 @@ extension DrinksCollectionManager: UICollectionViewDataSource {
 extension DrinksCollectionManager: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-        let viewModel = viewModels[indexPath.item]
+        print(indexPath.row)
+        let viewModel = viewModels[indexPath.row]
 
         viewModel.didTape(viewModel)
-        print(indexPath.item)
     }
     
 }

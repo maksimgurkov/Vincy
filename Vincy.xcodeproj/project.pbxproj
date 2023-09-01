@@ -18,8 +18,6 @@
 		76956FBD2A9BDE6400998252 /* StartButtonManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76956FBC2A9BDE6400998252 /* StartButtonManagerProtocol.swift */; };
 		76956FBF2A9BE05D00998252 /* StartAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76956FBE2A9BE05D00998252 /* StartAssembly.swift */; };
 		76956FC32A9BE31C00998252 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 76956FC52A9BE31C00998252 /* Localizable.strings */; };
-		76956FC92A9BE3E900998252 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76956FC82A9BE3E900998252 /* Router.swift */; };
-		76956FCB2A9BE43400998252 /* StartRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76956FCA2A9BE43400998252 /* StartRouter.swift */; };
 		76956FD22A9BE69E00998252 /* TabBarPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76956FD12A9BE69E00998252 /* TabBarPresenterProtocol.swift */; };
 		76956FD42A9BE6CE00998252 /* TabBarPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76956FD32A9BE6CE00998252 /* TabBarPresenter.swift */; };
 		76956FD62A9BE72100998252 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76956FD52A9BE72100998252 /* TabBarViewController.swift */; };
@@ -68,8 +66,6 @@
 		76956FC22A9BE30B00998252 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		76956FC42A9BE31C00998252 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		76956FC62A9BE32100998252 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		76956FC82A9BE3E900998252 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
-		76956FCA2A9BE43400998252 /* StartRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartRouter.swift; sourceTree = "<group>"; };
 		76956FD12A9BE69E00998252 /* TabBarPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarPresenterProtocol.swift; sourceTree = "<group>"; };
 		76956FD32A9BE6CE00998252 /* TabBarPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarPresenter.swift; sourceTree = "<group>"; };
 		76956FD52A9BE72100998252 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
@@ -164,8 +160,8 @@
 		76956FAC2A9BDB2300998252 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				76A632052AA08E98007D1CC5 /* DrinkDetailModules */,
 				76956FAD2A9BDB3500998252 /* StartModules */,
+				76A632052AA08E98007D1CC5 /* DrinkDetailModules */,
 				76956FCC2A9BE62900998252 /* TabBarModules */,
 				76956FDD2A9BEA6C00998252 /* DrinksModules */,
 				76956FDE2A9BEAA600998252 /* SnacksModules */,
@@ -178,7 +174,6 @@
 		76956FAD2A9BDB3500998252 /* StartModules */ = {
 			isa = PBXGroup;
 			children = (
-				76956FC72A9BE3BE00998252 /* Router */,
 				76956FB12A9BDB8C00998252 /* Assembly */,
 				76956FB02A9BDB8400998252 /* Manager */,
 				76956FAF2A9BDB7700998252 /* Views */,
@@ -220,15 +215,6 @@
 				76956FBE2A9BE05D00998252 /* StartAssembly.swift */,
 			);
 			path = Assembly;
-			sourceTree = "<group>";
-		};
-		76956FC72A9BE3BE00998252 /* Router */ = {
-			isa = PBXGroup;
-			children = (
-				76956FC82A9BE3E900998252 /* Router.swift */,
-				76956FCA2A9BE43400998252 /* StartRouter.swift */,
-			);
-			path = Router;
 			sourceTree = "<group>";
 		};
 		76956FCC2A9BE62900998252 /* TabBarModules */ = {
@@ -544,7 +530,6 @@
 				76A6320F2AA0900A007D1CC5 /* DrinkDetailViewInput.swift in Sources */,
 				76956F972A9BD98200998252 /* AppDelegate.swift in Sources */,
 				76956FE62A9BECA700998252 /* TabBarAssembly.swift in Sources */,
-				76956FCB2A9BE43400998252 /* StartRouter.swift in Sources */,
 				76956FE42A9BEB2A00998252 /* DrinksViewController.swift in Sources */,
 				76956FEE2A9C7F4C00998252 /* SettingViewController.swift in Sources */,
 				BA891BD82A9FD2BB00040DCE /* CollectionLayoutParameters.swift in Sources */,
@@ -561,7 +546,6 @@
 				76956FBD2A9BDE6400998252 /* StartButtonManagerProtocol.swift in Sources */,
 				76956FD82A9BE73600998252 /* TabBarViewInputProtocol.swift in Sources */,
 				76A632002AA0639B007D1CC5 /* NetworkManager.swift in Sources */,
-				76956FC92A9BE3E900998252 /* Router.swift in Sources */,
 				BA891BDA2A9FDCDB00040DCE /* Fonts.swift in Sources */,
 				76956FB32A9BDBFB00998252 /* StartViewController.swift in Sources */,
 				76A631FA2AA06085007D1CC5 /* ProductModel.swift in Sources */,

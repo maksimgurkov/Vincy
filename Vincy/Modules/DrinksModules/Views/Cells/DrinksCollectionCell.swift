@@ -13,7 +13,6 @@ final class DrinksCollectionCell: UICollectionViewCell {
     
     private let drinkImage: UIImageView = {
         let image = UIImageView()
-//        image.image = UIImage(named: "Капучино")
         image.layer.masksToBounds = true
         image.contentMode = .scaleAspectFill
         image.layer.cornerRadius = 10
@@ -94,12 +93,7 @@ final class DrinksCollectionCell: UICollectionViewCell {
             titleLabel.leftAnchor.constraint(equalTo: drinkImage.leftAnchor),
             titleLabel.rightAnchor.constraint(equalTo: drinkImage.rightAnchor),
             titleLabel.topAnchor.constraint(equalTo: drinkImage.bottomAnchor, constant: 10),
-            
-//            liteImage.leftAnchor.constraint(equalTo: leftAnchor, constant: 30),
-//            liteImage.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 20),
-//            liteImage.heightAnchor.constraint(equalToConstant: 30),
-//            liteImage.widthAnchor.constraint(equalToConstant: 30),
-            
+                        
             liteLabel.rightAnchor.constraint(equalTo: drinkImage.rightAnchor),
             liteLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 5),
             
