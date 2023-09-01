@@ -13,7 +13,6 @@ final class DrinksCollectionCell: UICollectionViewCell {
     
     private let drinkImage: UIImageView = {
         let image = UIImageView()
-        image.image = UIImage(named: "Капучино")
         image.layer.masksToBounds = true
         image.contentMode = .scaleAspectFill
         image.layer.cornerRadius = 10
@@ -78,8 +77,9 @@ final class DrinksCollectionCell: UICollectionViewCell {
         addSubview(liteLabel)
     }
     
-    func fill(text: String) {
-        titleLabel.text = text
+    func fill(viewModel: ProductViewModel) {
+        titleLabel.text = viewModel.title
+        drinkImage.image = UIImage(named: "\(viewModel.image)")
     }
     
     private func setConstraints() {
@@ -93,17 +93,12 @@ final class DrinksCollectionCell: UICollectionViewCell {
             titleLabel.leftAnchor.constraint(equalTo: drinkImage.leftAnchor),
             titleLabel.rightAnchor.constraint(equalTo: drinkImage.rightAnchor),
             titleLabel.topAnchor.constraint(equalTo: drinkImage.bottomAnchor, constant: 10),
-            
-//            liteImage.leftAnchor.constraint(equalTo: leftAnchor, constant: 30),
-//            liteImage.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 20),
-//            liteImage.heightAnchor.constraint(equalToConstant: 30),
-//            liteImage.widthAnchor.constraint(equalToConstant: 30),
-            
+                        
             liteLabel.rightAnchor.constraint(equalTo: drinkImage.rightAnchor),
-            liteLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 3),
+            liteLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 5),
             
             volumeLabel.leftAnchor.constraint(equalTo: titleLabel.leftAnchor),
-            volumeLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 3)
+            volumeLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 5)
             
         ])
     }

@@ -4,7 +4,6 @@ import UIKit
 final class StartViewController: UIViewController {
     
     private let presenter: StartPresenterProtocol
-    private let router: StartRouter = Router.shared
     
     lazy var startButton: UIButton = {
         return UIButton(frame: .zero)
@@ -42,7 +41,9 @@ final class StartViewController: UIViewController {
     }
     
     @objc private func actionStartButton() {
-        router.presentTabBarController(viewController: self)
+        let tabBarModule = TabBarAssembly.assemble()
+        tabBarModule.modalPresentationStyle = .fullScreen
+        present(tabBarModule, animated: true)
     }
     
 }

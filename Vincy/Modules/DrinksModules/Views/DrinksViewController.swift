@@ -28,26 +28,14 @@ final class DrinksViewController: UIViewController {
         tabBarController?.tabBar.tintColor = .brown
         view.addSubview(collectionView)
         presenter.viewDidLoad()
-        collectionView.frame = view.frame(forAlignmentRect: CGRect(x: 0, y: 0, width: view.frame.width - 1, height: view.frame.height))
+        collectionView.frame = view.bounds
 
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        collectionLayout.minimumLineSpacing = 8
+        collectionLayout.minimumLineSpacing = 20
         collectionLayout.scrollDirection = .vertical
-        collectionView.reloadData()
-        setConstraints()
-    }
-    
-    private func setConstraints() {
-        NSLayoutConstraint.activate([
-            collectionView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 50),
-            collectionView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0),
-            collectionView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20),
-            collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0)
-            
-        ])
     }
 }
 
