@@ -36,17 +36,7 @@ final class DrinksCollectionCell: UICollectionViewCell {
         label.font = .caption2
         return label
     }()
-    
-//    private let liteImage: UIImageView = {
-//        let image = UIImageView()
-//        image.image = UIImage(named: "250")
-//        image.layer.masksToBounds = true
-//        image.contentMode = .scaleToFill
-//        image.layer.cornerRadius = 10
-//        image.translatesAutoresizingMaskIntoConstraints = false
-//        return image
-//    }()
-        
+            
     private let liteLabel: UILabel = {
         let label = UILabel()
         label.tintColor = .white
@@ -71,10 +61,9 @@ final class DrinksCollectionCell: UICollectionViewCell {
         layer.cornerRadius = 12
         layer.borderColor = #colorLiteral(red: 0.5058823824, green: 0.3372549117, blue: 0.06666667014, alpha: 1)
         layer.borderWidth = 2
-        addSubview(drinkImage)
-        addSubview(titleLabel)
-        addSubview(volumeLabel)
-        addSubview(liteLabel)
+        [drinkImage, titleLabel, volumeLabel, liteLabel].forEach { view in
+            addSubview(view)
+        }
     }
     
     func fill(viewModel: ProductViewModel) {

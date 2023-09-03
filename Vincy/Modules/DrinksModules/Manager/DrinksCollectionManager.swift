@@ -48,13 +48,11 @@ extension DrinksCollectionManager: UICollectionViewDataSource {
 
 extension DrinksCollectionManager: UICollectionViewDelegate {
     
-    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-        print(indexPath.row)
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let viewModel = viewModels[indexPath.row]
 
         viewModel.didTape(viewModel)
     }
-    
 }
 
 extension DrinksCollectionManager: UICollectionViewDelegateFlowLayout {

@@ -14,6 +14,4 @@ extension StartButtonManager: StartButtonManagerProtocol {
         startButton?.layer.cornerRadius = 12
         startButton?.translatesAutoresizingMaskIntoConstraints = false
     }
-    
-    
 }
