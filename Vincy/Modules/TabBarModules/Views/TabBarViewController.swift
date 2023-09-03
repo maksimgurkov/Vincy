@@ -43,10 +43,11 @@ final class TabBarViewController: UITabBarController {
     // Генератор ТабБара
     private func generatorTabBar() {
         let drinksModule = DrinksAssembly.assemble()
+        let couponModel = CouponAssembly.assemble()
         viewControllers = [
         generator(viewController: drinksModule, title: NSLocalizedString("tabBarDrinksTitle", comment: ""), image: "cup.and.saucer"),
         generator(viewController: SnacksViewController(), title: NSLocalizedString("tabBarSnacksTitle", comment: ""), image: "popcorn"),
-        generator(viewController: CuponViewController(), title: NSLocalizedString("tabBarCuponTitle", comment: ""), image: "percent"),
+        generator(viewController: couponModel, title: NSLocalizedString("tabBarCuponTitle", comment: ""), image: "percent"),
         generator(viewController: SettingViewController(), title: NSLocalizedString("tabBarSettingsTitle", comment: ""), image: "gearshape")
         ]
     }
