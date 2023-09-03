@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		766DB8452AA485C3006AB054 /* NameDrinkLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766DB8442AA485C3006AB054 /* NameDrinkLabel.swift */; };
 		76956F972A9BD98200998252 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76956F962A9BD98200998252 /* AppDelegate.swift */; };
 		76956FA02A9BD98300998252 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76956F9F2A9BD98300998252 /* Assets.xcassets */; };
 		76956FA32A9BD98300998252 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76956FA12A9BD98300998252 /* LaunchScreen.storyboard */; };
@@ -51,6 +52,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		766DB8442AA485C3006AB054 /* NameDrinkLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameDrinkLabel.swift; sourceTree = "<group>"; };
 		76956F932A9BD98200998252 /* Vincy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vincy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76956F962A9BD98200998252 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		76956F9F2A9BD98300998252 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -425,6 +427,7 @@
 		76A632082AA08F1A007D1CC5 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				766DB8442AA485C3006AB054 /* NameDrinkLabel.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -538,6 +541,7 @@
 				76A632132AA09511007D1CC5 /* DrinkDetailAssembly.swift in Sources */,
 				76A632112AA0907B007D1CC5 /* DrinkDetailViewController.swift in Sources */,
 				76956FDA2A9BE85300998252 /* TabBarManager.swift in Sources */,
+				766DB8452AA485C3006AB054 /* NameDrinkLabel.swift in Sources */,
 				76A632022AA06448007D1CC5 /* DataManager.swift in Sources */,
 				76956FE12A9BEAF400998252 /* SnacksViewController.swift in Sources */,
 				76956FF72A9C82A600998252 /* DrinksViewInputProtocol.swift in Sources */,
