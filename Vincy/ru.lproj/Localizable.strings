@@ -8,6 +8,6 @@
 "startViewButton" = "Начать";
 "tabBarDrinksTitle" = "Напитки";
 "tabBarSnacksTitle" = "Закуски";
-"tabBarCuponTitle" = "Купон";
+"tabBarCouponTitle" = "Купон";
 "tabBarSettingsTitle" = "Настройки";
 "couponCodeTitleLabel" = "Код купона:";

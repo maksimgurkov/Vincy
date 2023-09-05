@@ -47,7 +47,7 @@ final class TabBarViewController: UITabBarController {
         viewControllers = [
         generator(viewController: drinksModule, title: NSLocalizedString("tabBarDrinksTitle", comment: ""), image: "cup.and.saucer"),
         generator(viewController: SnacksViewController(), title: NSLocalizedString("tabBarSnacksTitle", comment: ""), image: "popcorn"),
-        generator(viewController: couponModel, title: NSLocalizedString("tabBarCuponTitle", comment: ""), image: "percent"),
+        generator(viewController: couponModel, title: NSLocalizedString("tabBarCouponTitle", comment: ""), image: "percent"),
         generator(viewController: SettingViewController(), title: NSLocalizedString("tabBarSettingsTitle", comment: ""), image: "gearshape")
         ]
     }

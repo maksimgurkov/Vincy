@@ -319,7 +319,6 @@
 			isa = PBXGroup;
 			children = (
 				BADB53F62AA4F3BD00FA748C /* Assembly */,
-				BADB53F52AA4F3B500FA748C /* Manager */,
 				76956FE82A9C7E9D00998252 /* Views */,
 				BADB53F42AA4F38300FA748C /* Presenter */,
 			);
@@ -479,13 +478,6 @@
 				BADB53F92AA4F40B00FA748C /* CouponPresenter.swift */,
 			);
 			path = Presenter;
-			sourceTree = "<group>";
-		};
-		BADB53F52AA4F3B500FA748C /* Manager */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Manager;
 			sourceTree = "<group>";
 		};
 		BADB53F62AA4F3BD00FA748C /* Assembly */ = {

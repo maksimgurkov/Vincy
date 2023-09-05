@@ -28,7 +28,6 @@ extension DrinksCollectionManager: DrinksCollectionManagerProtocol {
         collectionView?.dataSource = self
     }
     
-    
 }
 
 extension DrinksCollectionManager: UICollectionViewDataSource {

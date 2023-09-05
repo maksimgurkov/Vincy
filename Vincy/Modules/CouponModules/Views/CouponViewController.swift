@@ -3,51 +3,66 @@ import UIKit
 final class CouponViewController: UIViewController {
     // MARK: - Properties
     
-    lazy var titleLabel: UILabel = {
-        let label = UILabel()
-        label.font = .headline3
-        label.text = "Большой капучино / латте"
-        return label
-    }()
     private let presenter: CouponPresenterProtocol
     private lazy var paperBagImageView: UIImageView = {
         let view = UIImageView()
-        view.image = .paperCup
-        view.backgroundColor = .clear
-        view.contentMode = .scaleAspectFill
+        view.image = UIImage(named: "Coupon_coffee")
+        view.translatesAutoresizingMaskIntoConstraints = false
+//        view.contentMode = .scaleAspectFill
+        return view
+    }()
+    private lazy var backgroundView: UIView = {
+        let view = UIView()
+        view.layer.cornerRadius = 15
+        view.backgroundColor = #colorLiteral(red: 1, green: 0.9607843137, blue: 0.9137254902, alpha: 1)
         return view
     }()
     private lazy var codeBackgroundView: UIView = {
         let view = UIView()
-        view.layer.cornerRadius = 12
-        view.backgroundColor = .gray.withAlphaComponent(0.35)
+        view.layer.cornerRadius = 15
+        view.backgroundColor = #colorLiteral(red: 1, green: 0.9607843137, blue: 0.9137254902, alpha: 1)
         return view
     }()
-    private let infoButton: UIButton = {
-        let button = UIButton()
-        let image = UIImage(systemName: "info.circle")
-        button.setImage(image, for: .normal)
-        button.tintColor = .systemBrown
-        return button
-    }()
-    private lazy var couponeCodeLabel: UILabel = {
-        let label = UILabel()
-        label.font = .headline3
-        label.textAlignment = .center
-        label.text = NSLocalizedString("couponCodeTitleLabel", comment: "")
-        return label
-    }()
-    private lazy var codeLabel: UILabel = {
+    private lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.font = .headline1
-        label.textAlignment = .center
-        label.text = "2164685"
+        label.textAlignment = .left
+        label.textColor = #colorLiteral(red: 0.137254902, green: 0.04705882353, blue: 0.007843137255, alpha: 1)
+        label.text = "Скидка 25%"
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.numberOfLines = 2
         return label
     }()
     
-    // MARK: - Life cycle
+    private lazy var couponLabel: UILabel = {
+        let label = UILabel()
+        label.textAlignment = .left
+        label.text = "Купон"
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
     
-    init(presenter: CouponPresenterProtocol){
+    private lazy var codeLabel: UILabel = {
+        let label = UILabel()
+        label.textAlignment = .center
+        label.font = .headline4
+        label.text = "КОФЕ МНОГО НЕ БЫВАЕТ"
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    private lazy var perforationViews: [UIView] = {
+        var views: [UIView] = []
+        for _ in 0..<30 {
+            let view = UIView()
+            view.layer.cornerRadius = 2
+            view.backgroundColor = #colorLiteral(red: 0.9333333333, green: 0.862745098, blue: 0.7764705882, alpha: 1)
+            views.append(view)
+        }
+        return views
+    }()
+    
+    init(presenter: CouponPresenterProtocol) {
         self.presenter = presenter
         super.init(nibName: nil, bundle: nil)
     }
@@ -58,48 +73,60 @@ final class CouponViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemBackground
-        title = NSLocalizedString("tabBarCuponTitle", comment: "")
+        view.backgroundColor = #colorLiteral(red: 0.9333333333, green: 0.862745098, blue: 0.7764705882, alpha: 1)
+        title = NSLocalizedString("tabBarCouponTitle", comment: "")
         presenter.viewDidLoad()
         viewsAdding()
         setConstraint()
     }
 }
 
-// MARK: - Extensions
-
-extension CouponViewController: CouponViewInputProtocol { }
+extension CouponViewController: CouponViewInputProtocol {}
 
 private extension CouponViewController {
     private func viewsAdding() {
-        [paperBagImageView, codeBackgroundView, infoButton, titleLabel, couponeCodeLabel, codeLabel].forEach { view in
+        let views = [backgroundView, codeBackgroundView] + perforationViews
+        views.forEach { view in
             view.translatesAutoresizingMaskIntoConstraints = false
             self.view.addSubview(view)
         }
+        backgroundView.addSubview(titleLabel)
+        codeBackgroundView.addSubview(codeLabel)
+        backgroundView.addSubview(paperBagImageView)
     }
     
     func setConstraint() {
         NSLayoutConstraint.activate([
-            paperBagImageView.heightAnchor.constraint(equalToConstant: 600),
-            paperBagImageView.centerXAnchor.constraint(equalTo: view.leftAnchor, constant: 107),
-            paperBagImageView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 72),
+            backgroundView.heightAnchor.constraint(equalTo: backgroundView.widthAnchor, multiplier: 1),
+            backgroundView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20),
+            backgroundView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20),
+            backgroundView.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -50),
             
-            codeBackgroundView.heightAnchor.constraint(equalToConstant: 160),
-            codeBackgroundView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 10),
-            codeBackgroundView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -10),
-            codeBackgroundView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            codeBackgroundView.heightAnchor.constraint(equalToConstant: 80),
+            codeBackgroundView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20),
+            codeBackgroundView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20),
+            codeBackgroundView.topAnchor.constraint(equalTo: backgroundView.bottomAnchor, constant: 0),
             
-            titleLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20),
-            titleLabel.topAnchor.constraint(equalTo: codeBackgroundView.topAnchor, constant: 12),
+            titleLabel.topAnchor.constraint(equalTo: backgroundView.topAnchor, constant: 20),
+            titleLabel.leftAnchor.constraint(equalTo: backgroundView.leftAnchor,constant: 20),
+            titleLabel.rightAnchor.constraint(equalTo: backgroundView.rightAnchor, constant: -20),
             
-            infoButton.rightAnchor.constraint(equalTo: codeBackgroundView.rightAnchor, constant: -10),
-            infoButton.topAnchor.constraint(equalTo: codeBackgroundView.topAnchor, constant: 10),
+            paperBagImageView.centerXAnchor.constraint(equalTo: backgroundView.centerXAnchor),
+            paperBagImageView.centerYAnchor.constraint(equalTo: backgroundView.centerYAnchor, constant: 50),
+            paperBagImageView.heightAnchor.constraint(equalTo: backgroundView.heightAnchor, multiplier: 0.8),
+            paperBagImageView.widthAnchor.constraint(equalTo: backgroundView.widthAnchor, multiplier: 0.8),
             
-            couponeCodeLabel.centerYAnchor.constraint(equalTo: codeBackgroundView.centerYAnchor),
-            couponeCodeLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20),
-            
-            codeLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20),
-            codeLabel.bottomAnchor.constraint(equalTo: codeBackgroundView.bottomAnchor, constant: -6)
+            codeLabel.centerXAnchor.constraint(equalTo: codeBackgroundView.centerXAnchor),
+            codeLabel.centerYAnchor.constraint(equalTo: codeBackgroundView.centerYAnchor),
         ])
+        
+        for (index, perforationView) in perforationViews.enumerated() {
+            NSLayoutConstraint.activate([
+                perforationView.widthAnchor.constraint(equalToConstant: 12),
+                perforationView.heightAnchor.constraint(equalToConstant: 4),
+                perforationView.topAnchor.constraint(equalTo: backgroundView.bottomAnchor, constant: -2),
+                perforationView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: CGFloat(20 * index + 20))
+            ])
+        }
     }
 }
